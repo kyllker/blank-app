@@ -39,7 +39,7 @@ if st.button("Generate New Image"):
                 "category": category,
                 "output_filename": output_filename
             }
-            os.environ["REPLICATE_API_TOKEN"] = "r8_Lr8gS9evl01O8EGLmGKtw8m7pGmdHT62paDIA"
+            token = os.getenv("REPLICATE_API_TOKEN")
             deployment = replicate.deployments.get("techml-mm/tryon")
             prediction = deployment.predictions.create(
                 input=payload

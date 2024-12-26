@@ -22,7 +22,6 @@ if st.button("Generate New Image"):
             # Fetch the first image
             response1 = requests.get(image_url1)
             img1 = Image.open(BytesIO(response1.content))
-
             # Fetch the second image
             response2 = requests.get(image_url2)
             img2 = Image.open(BytesIO(response2.content))

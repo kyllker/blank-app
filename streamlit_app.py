@@ -39,7 +39,7 @@ if st.button("Generate New Image"):
                 "category": category,
                 "output_filename": output_filename
             }
-            api_key = st.secrets["replicate"]["REPLICATE_API_TOKEN"]
+            api_key = st.secrets["REPLICATE_API_TOKEN"]
             os.environ["REPLICATE_API_TOKEN"] = api_key
             deployment = replicate.deployments.get("techml-mm/tryon")
             prediction = deployment.predictions.create(

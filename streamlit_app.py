@@ -12,6 +12,8 @@ st.write("Upload two image URLs, transform them using Replicate, and see the res
 # Input fields for image URLs
 image_url1 = st.text_input("Enter the first image URL:")
 image_url2 = st.text_input("Enter the second image URL:")
+category = st.text_input("Enter the category:")
+output_filename = st.text_input("Enter the output_filename:")
 
 # Button to trigger the process
 if st.button("Generate New Image"):
@@ -34,8 +36,8 @@ if st.button("Generate New Image"):
             payload = {
                 "url_body": image_url1,
                 "url_product": image_url2,
-                "category": "upper",
-                "output_filename": "proof"
+                "category": category,
+                "output_filename": output_filename
             }
             os.environ["REPLICATE_API_TOKEN"] = "r8_Lr8gS9evl01O8EGLmGKtw8m7pGmdHT62paDIA"
             deployment = replicate.deployments.get("techml-mm/tryon")
